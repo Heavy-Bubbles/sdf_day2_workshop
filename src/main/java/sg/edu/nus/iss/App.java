@@ -43,11 +43,20 @@ public class App
             Random randomNum = new Random();
             float initialBalance = min + randomNum.nextFloat();
 
-            bankAcct[1] = new bankAccount("Employee", uuid, initialBalance);
+            bankAcct[i] = new bankAccount("Employee", uuid, initialBalance);
         }
 
-        bankAcct[0].showAccount();
-        bankAcct[0].withdraw(100.00f);
-        bankAcct[0].showAccount();
+        //bankAcct[0].showAccount();
+        //bankAcct[0].withdraw(50.00f);
+        //bankAcct[0].showAccount();
+
+
+        // Fixed deposit account test
+        fixedDepositAccount chelfixedD = new fixedDepositAccount("Chel", "123", 3000.00f, 10.0f, 1);
+
+        chelfixedD.deposit(333);
+        chelfixedD.withdraw(223);
+        float computedBalance = chelfixedD.getBalance();
+        System.out.println (chelfixedD.getAccountNumber() + "- " + chelfixedD.getFullName() + "--> Balance: " + computedBalance);
     }
 }
